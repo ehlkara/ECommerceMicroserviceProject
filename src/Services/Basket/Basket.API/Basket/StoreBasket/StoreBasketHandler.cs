@@ -17,10 +17,10 @@ public class StoreBasketCommandHandler(IBasketRepository repository)
 {
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
     {
-        ShoppingCart cart = command.Cart;
+        //TODO: communicate with Discount.Grpc and calculate latest prices of products into the shopping cart
 
-        //TODO: store basket in the database (use Marten upsert - if exist = update, if no = add)
-        //TODO: update cache
+
+        //TODO: store basket in the database (use Marten upsert - if exist = update, if no = add) and update cache
         await repository.StoreBasket(command.Cart, cancellationToken);
 
         return new StoreBasketResult(command.Cart.UserName);
