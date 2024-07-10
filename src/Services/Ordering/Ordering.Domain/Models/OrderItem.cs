@@ -2,7 +2,7 @@
 
 public class OrderItem : Entity<Guid>
 {
-    internal OrderItem(Guid productId, Guid orderId, decimal price, int quantity)
+    internal OrderItem(ProductId productId, OrderId orderId, decimal price, int quantity)
     {
         ProductId = productId;
         OrderId = orderId;
