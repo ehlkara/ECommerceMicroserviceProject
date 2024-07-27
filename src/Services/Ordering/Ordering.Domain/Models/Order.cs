@@ -29,7 +29,7 @@ public class Order : Aggregate<OrderId>
             Status = OrderStatus.Pending,
         };
 
-        order.AddDomainEvent(new OrderCreateEvent(order));
+        order.AddDomainEvent(new OrderCreatedEvent(order));
 
         return order;
     }
@@ -42,7 +42,7 @@ public class Order : Aggregate<OrderId>
         Payment = payment;
         Status = status;
 
-        AddDomainEvent(new OrderUpdateEvent(this));
+        AddDomainEvent(new OrderUpdatedEvent(this));
     }
 
     public void Add(ProductId productId, int quantity, decimal price)
