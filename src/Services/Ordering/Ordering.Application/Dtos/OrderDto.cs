@@ -8,6 +8,6 @@ public record OrderDto(
     string OrderName, 
     AddressDto ShipppingAddress, 
     AddressDto BillingAddress, 
-    PaymentDto payment,
+    PaymentDto Payment,
     OrderStatus Status, 
     List<OrderItemDto> OrderItems);
